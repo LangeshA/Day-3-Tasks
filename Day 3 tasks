@@ -1,0 +1,84 @@
+1.comparing JSON
+function compareJSON(obj1, obj2) {
+    const sortedString1 = JSON.stringify(obj1, Object.keys(obj1).sort());
+    const sortedString2 = JSON.stringify(obj2, Object.keys(obj2).sort());
+  
+    return sortedString1 === sortedString2;
+  }
+  
+  let obj1 = { name: "Person1", age: 5 };
+  let obj2 = { age: 5, name: "Person1" };
+  
+  const isEqual = compareJSON(obj1, obj2);
+  console.log(isEqual); 
+
+
+2.Display flag names.
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+    console.log(result);
+    
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].flags[0]); 
+      }
+}
+
+
+3.1.Display country names
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+    console.log(result);
+    
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].name[0]); 
+      }
+}
+
+3.2.Display country regions 
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+    console.log(result);
+    
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].region[0]); 
+      }
+}
+
+3.3.Display country sub regions
+
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+    console.log(result);
+    
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].subregion[0]); 
+      }
+}
+
+3.4.Display country Populations
+
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+    console.log(result);
+    
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].population[0]); 
+      }
+}
+
+
